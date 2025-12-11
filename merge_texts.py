@@ -5,11 +5,9 @@ def merge_text_files(input_folder, output_file):
         for filename in sorted(os.listdir(input_folder)):
             filepath = os.path.join(input_folder, filename)
 
-            # Skip anything that isn't a file
             if not os.path.isfile(filepath):
                 continue
 
-            # Process only .txt files
             if filename.lower().endswith(".txt"):
                 separator_start = f"\n----- START {filename} -----\n"
                 separator_end   = f"\n----- END {filename} -----\n"
@@ -26,7 +24,7 @@ def merge_text_files(input_folder, output_file):
     print(f"Merged text saved to: {output_file}")
 
 if __name__ == "__main__":
-    input_folder = "Downloaded_Audio"        # folder containing .txt files
+    input_folder = "Downloaded_Audio"       
     output_file = "merged_output.txt"
 
     merge_text_files(input_folder, output_file)
