@@ -1,20 +1,21 @@
 import csv
+import os
 
-input_file = "merged_output.txt"
+input_folder = "Downloaded_Audio"
 output_file = "merged_for_sheets.csv"
 
 sections = []
-current = []
 
-with open(input_file, "r", encoding="utf-8") as f:
-    for line in f:
-        if line.startswith("----- START"):
-            current = []
-        elif line.startswith("----- END"):
-            cell_text = "\n".join(l.rstrip("\n") for l in current)
-            sections.append([cell_text])
-        else:
-            current.append(line)
+for filename in os.listdir(input_folder):
+    filepath = os.path.join(input_folder, filename)
+    
+    if not os.path.isfile(filepath):
+        continue
+    
+    if filename.lower().endswith(".txt"):
+        with open(filepath, 'r', encoding='utf-8') as infile:
+            content = infile.read()
+            sections.append([content]) 
 
 sections.reverse()
 
@@ -22,4 +23,4 @@ with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
     writer.writerows(sections)
 
-print("Output written to:", output_file)
+print(f"Output written to: {output_file}")
