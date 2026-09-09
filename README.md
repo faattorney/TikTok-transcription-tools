@@ -71,12 +71,3 @@ python tiktok_audio_downloader.py     --urls-file urls.txt     --output-dir "./D
 | --ffmpeg-location | Directory containing ffmpeg |
 | --codec | Output codec (default mp3) |
 | --quality | Audio quality (default 64) |
-
-## Ethical Use
-
-Use only with public content you are allowed to download.  
-Do not redistribute downloaded media.
-
-## License
-
-MIT License.
