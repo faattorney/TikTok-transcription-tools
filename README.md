@@ -1,6 +1,6 @@
 # TikTok Audio Downloader (yt-dlp)
 
-A command-line tool for downloading audio-only tracks (MP3 or other codecs) from public TikTok videos using yt-dlp and ffmpeg.
+A command-line tool for downloading audio-only tracks (MP3 or other codecs) from public TikTok videos using yt-dlp and ffmpeg. 
 
 It is designed for:
 
